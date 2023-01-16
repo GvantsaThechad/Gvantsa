@@ -1,98 +1,107 @@
-#include <iostream>
+#include<iostream>
 #include <stdio.h>
- 
 using namespace std;
- 
 class SkillWillLecturer{
     private:
-      string Name;
-      string SubjectName;
-      int Chapter;
-      int Level;
-      public:
-      SkillWillLecturer(string name, string subjectname, int chapter, int level) {
-          Name = name;
-          SubjectName = subjectname;
-          Chapter = chapter;
-          Level = level;
-      }
-      
-      void Lecturer(){
-          cout << "Name: " << Name << endl;
-          cout << "SubjectName: " << SubjectName << endl;
-          cout << "Chapter: " << Chapter << endl;
-          cout << "Level: " <<  Level << endl;
-      }
-};
- 
-class SkillWillStudent{
-    private:
-      string Name;
-      int Age;
-      string WhatAreYouStudying;
-      string Section;
-      string Course;
-      int QuizScore;
-      public:
-      SkillWillStudent(string name, int age, string whatareyoustudying, string section, string course, int quizscore ){
-          Name = name;
-          Age = age;
-          WhatAreYouStudying = whatareyoustudying;
-          Section = section;
-          Course = course;
-          QuizScore = quizscore;
-      }
-      
-      void Student() {
-          cout << "Name: " << Name << endl;
-          cout << "Age: " << Age << endl;
-          cout << "WhatAreYouStudying: " << WhatAreYouStudying << endl;
-          cout << "Section: " << Section << endl;
-          cout << "Course: " << Course << endl;
-          cout << "QuizScore: " << QuizScore << endl;
-      }
-};
- 
-class SkillWillSubject{
-    private:
-      string CourseName;
-      string StartingDate;
-      int CourseDuration_Months;
-      string LastLectureName;
-      public:
-      SkillWillSubject(string coursename, string startingdate, int courseduration_months, string lastlecturename){
-          CourseName = coursename;
-          StartingDate = startingdate;
-          CourseDuration_Months = courseduration_months;
-          LastLectureName = lastlecturename;
-      }
-      
-      void Subject() {
-          cout << "CourseName: " << CourseName << endl;
-          cout << "StartingDate: " << StartingDate << endl;
-          cout << "CourseDuration_Months: " << CourseDuration_Months << endl;
-          cout << "LastLectureName: " << LastLectureName << endl;
-      }
-};
+    string Name;
+    string Chapter;
+    string Level; 
+    string LectureTime;  //ლექციის თარიღი
+    public:
+    SkillWillLecturer(string name,string chapter,string level,string lecturetime){
+        Name=name;
+        Chapter=chapter;
+        Level=level;
+        LectureTime=lecturetime;
+    }
+     void introduceLecturer(){
+         cout<<"leqturer:"<< " "<< Name <<" "<< " is having a lesson "<<endl;
+         cout<<"Chapter:"<< Chapter <<endl;
+         cout<<"Level:"<< Level <<endl;
+         cout<<endl;
+     }
+
+     } ;
+
+      class  SkillWillStudent{ 
+        private:
+            string Name;
+            int Age;
+            string WhatAreYouStudying; 
+            string Section; 
+            string Course;
+            string StartLearning;
+            string Duration;   //სწავლის ხანგრძლივობა
+            int QuizScore;
+         public:   
+      SkillWillStudent(string name,int age,string whatareyoustudying, string section, string course,
+                       string startlearning, string duration,int quizScore){
+             Name=name;
+             Age=age;
+             WhatAreYouStudying=whatareyoustudying;
+             Section=section;
+             Course=course;
+             StartLearning=startlearning;
+             Duration=duration;
+             QuizScore=quizScore;
+         }
+         void introducestudent() {
+             cout<<"student:"<<" "<<Name<<" "<<""<<"Is attending the lectures "<<  endl;       
+             cout<<"Subject:"<<" "<<WhatAreYouStudying<<endl;
+             cout<<"Section:"<<" "<<Course<<" "<< Section <<endl;
+             cout<<"age:"<< Age <<endl;
+             cout<<"quizScore:"<<QuizScore<<endl;
+             cout<<endl;
+         }
+     };
+      class SkillWillSubject{
+
+          private:
+          string CourseName;
+          string StartingDate;
+          int CourseDuration_Months;
+          string LastLectureName;
+          public:
+          SkillWillSubject(string coursename,string startingdate,int courseduration_months,string lastlecturename){
+              CourseName=coursename;
+              StartingDate=startingdate;
+              CourseDuration_Months=courseduration_months;
+              LastLectureName=lastlecturename;
+          }
+          void introducesubjeqt(){
+              cout<<"CourseName:"<<CourseName<<endl;
+              cout<<"StartingDate:"<<StartingDate<<endl;
+              cout<<"CourseDuration_Months:"<<CourseDuration_Months<<endl;
+              cout<<"LastLectureName:"<<LastLectureName<<endl;
+              cout<<endl;
+          }
+
+      };
+
 int main()
-{
-    SkillWillLecturer lecturer1("levancho lobiani", "FrontEnd", 2, 3);
-    
-    lecturer1.Lecturer();
-    
-    SkillWillStudent student1("Gvantsa", 15, "react", "a", "BackEnd", 9687);
-    
-    student1.Student();
-    
-SkillWillStudent student2("Tengo", 16, "LIFE","b", "FrontEnd", 1000000);
-    student2.Student();
-    
-    SkillWillStudent student3("Taso",35,"NoIdea","c", "FrontEnd",87628);
-    student3.Student();
-    SkillWillSubject subject1("Mobile Development", "2023 February 20th ", 3, "interpersonal communications");
-    
-    subject1.Subject();
-    
-   
+{ 
+    SkillWillLecturer  lecturer1("Levancho lobiani","1_BackEnd","sinior","15.12.2022");
+
+  lecturer1. introduceLecturer();
+
+  SkillWillStudent student1("Gvantsa", 15,"react","B","BackEnd","01.10.2022","7 months",9687);
+  student1. introducestudent();
+
+   SkillWillSubject subject2("Programming","2022 september 16th",4,"Interpersonal Communications");
+  subject2. introducesubjeqt();
+
+   SkillWillStudent student2("Tengo", 16, "LIFE","A", "FrontEnd", "01.07.2022","4 months",1000000);
+    student2.introducestudent();
+
+
+    SkillWillSubject subject3("Programming","2022 september 16th",4,"Interpersonal Communications");
+  subject3. introducesubjeqt();
+
+    SkillWillStudent student3("Taso",35,"NoIdea","c", "FrontEnd","01.08.2022","87628 months",87628);
+    student3.introducestudent();
+
+
+  SkillWillSubject subject1("Programming","2022 september 16th",4,"Interpersonal Communications");
+  subject1. introducesubjeqt();
     return 0;
 }
